@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:matcher/matcher.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:weather_app/core/constants/api_keys.dart';
@@ -8,7 +9,7 @@ import 'package:weather_app/data/network/weather_remote_datasource.dart';
 import 'package:weather_app/models/base_response.dart';
 
 import '../../fixtures/fixture_reader.dart';
-import 'package:matcher/matcher.dart';
+
 
 class MockHttpClient extends Mock implements http.Client {}
 
