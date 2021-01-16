@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:http/http.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -19,6 +20,6 @@ GetIt $initGetIt(
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
   gh.lazySingleton<WeatherRemoteDataSource>(
-      () => WeatherRemoteDataSourceImpl());
+      () => WeatherRemoteDataSourceImpl(get<Client>()));
   return get;
 }
